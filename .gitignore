@@ -5,7 +5,10 @@
 
 
 # production
-/public
+/src
+.browserlistrc
+.json
+.config.js
 
 # misc
 .DS_Store
