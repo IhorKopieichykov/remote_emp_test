@@ -555,9 +555,11 @@
 						<p class="subscribe__text">Subscribe to our news letter</p>
 						<form action="#" class="subscribe__form">
 							<input
-								type="text"
+								type="email"
 								class="subscribe__input"
 								required
+								pattern="/^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/"
+								title="Enter your email"
 								placeholder="Your Email" />
 							<button type="submit" class="subscribe__button">Subscribe</button>
 						</form>

@@ -1,6 +1,7 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 
 const mode = process.env.NODE_ENV || "development";
 const devMode = mode === "development";
@@ -22,7 +23,11 @@ module.exports = {
 	plugins: [
 		new HtmlWebpackPlugin({
 			template: path.resolve(__dirname, "src", "index.html"),
-			favicon: './src/images/favicon.png',
+			favicon: "./src/images/favicon.png",
+		}),
+		new FaviconsWebpackPlugin({
+			logo: "./src/images/favicon.png",
+			// Здесь можно указать другие опции
 		}),
 		new MiniCssExtractPlugin({
 			filename: "[name].[contenthash].css",
@@ -69,7 +74,6 @@ module.exports = {
 						},
 					},
 				],
-				
 			},
 			{
 				test: /\.svg$/,
