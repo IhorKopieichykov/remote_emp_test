@@ -1,0 +1,138 @@
+/* ====== ASIDE ======*/
+.main__aside-bg{
+	position: fixed;
+	z-index: 10;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	pointer-events: none;	
+	background-color: rgba(0, 0, 0, 0.3);
+	visibility: hidden;
+	opacity: 0;
+	pointer-events: none;
+	transition: all .2s ease;
+	&.active{
+		visibility: visible;
+		opacity: 1;
+		pointer-events: auto;
+	}
+}
+.main__aside {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 270px;
+	height: calc(100vh - 92px);
+	background-color: rgba(39, 39, 41, 0.6);
+	z-index: 20;
+	margin-top: 92px;
+	padding: 78px 0px 0px 56px;
+	transition: all .5s ease;
+}
+@media (max-width: 1200px) {
+	.main__aside {
+		padding: 36px 0px 0px 56px;
+		position: fixed;
+		transform: translate(-100%, 0%);
+		background-color: rgba(39, 39, 41, 1);
+		&.active{
+			transform: translate(0%, 0%);
+		}
+	}
+}
+.aside__profile {
+	margin-bottom: 36px;
+}
+@media (min-width: 1200px) {
+	.aside__profile {
+		display: none;
+	}
+}
+.profile-aside {
+}
+.profile-aside__menu {
+	margin-top: 16px;
+	padding-left: 46px;
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+}
+.profile-menu {
+}
+.profile-menu__item {
+}
+.profile-aside__user {
+	display: flex;
+	align-items: center;
+	gap: 16px;
+	color: inherit;
+}
+.profile-user {
+}
+.profile-user__name {
+}
+.profile-user__photo {
+}
+.main__menu {
+	display: flex;
+	flex-direction: column;
+	gap: 24px;
+}
+.menu {
+}
+.menu__link {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 16px;
+	color: rgba(255, 255, 255, 0.5);
+	font-size: 18px;
+	font-weight: 500;
+	text-transform: capitalize;
+	transition: all 0.2s ease;
+	& > span {
+		width: 100%;
+		max-width: 85px;
+		height: 2px;
+		background-color: #fff;
+		transform: scaleX(0);
+		transform-origin: center right;
+		transition: all 0.4s ease;
+	}
+}
+@media (min-width: 992px) {
+	.menu__link {
+		&:hover {
+			color: rgb(255, 255, 255);
+			& > span {
+				transform: scaleX(1);
+			}
+		}
+		&-active {
+			cursor: default;
+			color: rgb(255, 255, 255);
+			& > span {
+				transform: scaleX(1);
+			}
+		}
+	}
+}
+@media (max-width: 992px) {
+	.menu__link {
+		&:active {
+			color: rgb(255, 255, 255);
+			& > span {
+				transform: scaleX(1);
+			}
+		}
+		&-active {
+			cursor: default;
+			color: rgb(255, 255, 255);
+			& > span {
+				transform: scaleX(1);
+			}
+		}
+	}
+}
